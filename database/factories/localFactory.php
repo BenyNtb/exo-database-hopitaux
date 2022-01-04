@@ -14,7 +14,7 @@ class localFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'numero' =>$this->faker->biasedNumberBetween($min = 100, $max = 700, $function = 'sqrt'),
         ];
     }
 }
