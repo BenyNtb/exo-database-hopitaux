@@ -14,7 +14,7 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
+        DB::table('types')->insert([
             [
                 'nom' => "Bureau",
                 'created_at' => now(),

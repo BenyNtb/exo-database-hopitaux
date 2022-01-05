@@ -17,7 +17,7 @@ class patientFactory extends Factory
             //
             'name' => $this->faker->name(),
             'naissance' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'numeroderegistrenational' => $this->faker->randomNumber($nbDigits = NULL, $strict = false),
+            'numeroderegistrenational' => $this->faker->unique()->randomNumber($nbDigits = NULL, $strict = false),
             // 'genre' => $this->faker-> title($gender = null|'male'|'female'),
             'adresse' => $this->faker->streetAddress(),
             'pays' => $this->faker->country(),

@@ -16,6 +16,8 @@ class CreateMaladiesTable extends Migration
         Schema::create('maladies', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string("traitement");
+            $table->boolean("curable");
             $table->timestamps();
         });
     }

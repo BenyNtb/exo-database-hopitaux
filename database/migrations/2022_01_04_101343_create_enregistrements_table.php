@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDossiermedicalsTable extends Migration
+class CreateEnregistrementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateDossiermedicalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dossiermedicals', function (Blueprint $table) {
+        Schema::create('enregistrements', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("consultations_id")->constrained();
             $table->integer("patient_id");
+            $table->foreign("patient_id")->on("patients")->references("numeroderegistrenational");
+            $table->foreignId("maladie_id")->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateDossiermedicalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dossiermedicals');
+        Schema::dropIfExists('enregistrements');
     }
 }

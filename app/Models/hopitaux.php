@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class hopitaux extends Model
 {
     use HasFactory;
+    public function locals() {
+        return $this->hasMany(Local::class, "hopital_id");
+    }
 }

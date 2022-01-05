@@ -16,6 +16,7 @@ class CreateHopitalsTable extends Migration
         Schema::create('hopitals', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('adresse');
             $table->timestamps();
         });
     }

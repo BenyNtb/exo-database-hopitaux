@@ -17,6 +17,9 @@ class CreateConsultationsTable extends Migration
             $table->id();
             $table->date('date');
             $table->time('time');
+            $table->integer("patient_id");
+            $table->foreign("patient_id")->on("patients")->references("numeroderegistrenational");
+            $table->foreignId("docteur_id")->constrained();
             $table->timestamps();
         });
     }

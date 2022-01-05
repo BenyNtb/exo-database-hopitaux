@@ -14,8 +14,9 @@ class docteurFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company (),
+            'name' => $this->faker->name (),
             'anneedexperience' =>$this->faker->biasedNumberBetween($min = 1, $max = 20, $function = 'sqrt'),
+            'specialisation' => $this->faker->word(),
         ];
     }
 }

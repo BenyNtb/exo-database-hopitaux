@@ -13,14 +13,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Consultation::factory(2000)->create();
         $this->call([
+            PatientSeeder::class,
+            DocteurSeeder::class,
             HopitalSeeder::class,
             MaladieSeeder::class,
-            DocteurSeeder::class,
+            TypeSeeder::class,
+            EnregistrementSeeder::class,
             LocalSeeder::class,
-            PatientSeeder::class,
+            DossiermedicalSeeder::class,
         ]);    
         \App\Models\User::factory(50)->create();
+        \App\Models\Consultation::factory(2000)->create();
     }
 }

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class type extends Model
 {
     use HasFactory;
+    public function local() {
+		return  $this->hasMany(Local::class);
+    }
 }
