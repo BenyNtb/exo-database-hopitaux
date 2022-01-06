@@ -1,20 +1,31 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Nom</th>
+            {{-- <th scope="col">Prénom</th> --}}
+            <th scope="col">Date de naissance</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Pays</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Code Postal</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">consultation</th>
         </tr>
     </thead>
+    @foreach ($patients as $patient)
     <tbody>
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{{$patient->name}}</td>
+            {{-- <td>{{$patient->prenom}}</td> --}}
+            <td>{{$patient->naissance}}</td>
+            <td>{{$patient->adresse}}</td>
+            <td>{{$patient->pays}}</td>
+            <td>{{$patient->ville}}</td>
+            <td>{{$patient->codepostal}}</td>
+            <td>{{$patient->telephone}}</td>
+            {{-- <td>{{$patient->telephone}}</td> --}}
         </tr>
-        <tr>
+        {{-- <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
@@ -24,6 +35,7 @@
             <th scope="row">3</th>
             <td colspan="2">Larry the Bird</td>
             <td>@twitter</td>
-        </tr>
+        </tr> --}}
     </tbody>
+    @endforeach
 </table>
