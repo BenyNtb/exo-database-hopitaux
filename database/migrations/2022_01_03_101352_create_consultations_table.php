@@ -20,6 +20,7 @@ class CreateConsultationsTable extends Migration
             $table->integer("patient_id");
             $table->foreign("patient_id")->on("patients")->references("numeroderegistrenational");
             $table->foreignId("docteur_id")->constrained();
+            $table->foreignId("consultation_statuts_id")->constrained();
             $table->timestamps();
         });
     }

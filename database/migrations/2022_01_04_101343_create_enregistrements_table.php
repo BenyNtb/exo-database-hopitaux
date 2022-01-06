@@ -19,6 +19,7 @@ class CreateEnregistrementsTable extends Migration
             $table->integer("patient_id");
             $table->foreign("patient_id")->on("patients")->references("numeroderegistrenational");
             $table->foreignId("maladie_id")->constrained();
+            $table->foreignId("enregistrement_statuts_id")->constrained();
             $table->timestamps();
         });
     }

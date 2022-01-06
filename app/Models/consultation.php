@@ -20,4 +20,7 @@ class consultation extends Model
     public function enregistrement() {
         return $this->belongsTo(Enregistrement::class, "enregistrement_id", "id");
     }
+    public function consultation_statuts(){
+        return $this->belongsTo(Consultation_statuts::class, "statuts_id");
+    }
 }
